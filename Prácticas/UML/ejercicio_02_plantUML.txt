@@ -1,0 +1,59 @@
+abstract class Jugada {
+  + {abstract} jugarContra( jugada : Jugada ) : String
+  + {abstract} jugarContraPiedra() : String	
+  + {abstract} jugarContraPapel() : String
+  + {abstract} jugarContraTijera() : String	
+  + {abstract} jugarContraLagarto() : String	
+  + {abstract} jugarContraSpock() : String
+}
+
+class Lagarto {
+  + jugarContra( jugada : Jugada ) : String	
+  + jugarContraPiedra() : String	
+  + jugarContraPapel() : String	
+  + jugarContraTijera() : String	
+  + jugarContraLagarto() : String	
+  + jugarContraSpock() : String
+}
+
+class Papel {
+  + jugarContra( jugada : Jugada ) : String	
+  + jugarContraPiedra() : String	
+  + jugarContraPapel() : String	
+  + jugarContraTijera() : String	
+  + jugarContraLagarto() : String	
+  + jugarContraSpock() : String
+}
+
+class Piedra {
+  + jugarContra( jugada : Jugada ) : String	
+  + jugarContraPiedra() : String	
+  + jugarContraPapel() : String	
+  + jugarContraTijera() : String	
+  + jugarContraLagarto() : String	
+  + jugarContraSpock() : String
+}
+
+class Spock {
+  + jugarContra( jugada : Jugada ) : String	
+  + jugarContraPiedra() : String	
+  + jugarContraPapel() : String	
+  + jugarContraTijera() : String	
+  + jugarContraLagarto() : String	
+  + jugarContraSpock() : String
+}
+
+class Tijera {
+  + jugarContra( jugada : Jugada ) : String	
+  + jugarContraPiedra() : String	
+  + jugarContraPapel() : String	
+  + jugarContraTijera() : String	
+  + jugarContraLagarto() : String	
+  + jugarContraSpock() : String
+}
+
+Jugada <|-- Lagarto
+Jugada <|-- Papel
+Jugada <|-- Piedra
+Jugada <|-- Spock
+Jugada <|-- Tijera
