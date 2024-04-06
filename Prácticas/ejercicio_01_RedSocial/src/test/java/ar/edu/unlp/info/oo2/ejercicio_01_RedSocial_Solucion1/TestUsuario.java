@@ -1,3 +1,12 @@
+/*
+ * 
+ * 
+ * 
+ * LA SOLUCION 2 ES SUPERIOR PERDO DEJO ESTA PORQUE ME LLEVO TIEMPO Y ES ALTA PAJA BORRAR TODO 
+ * 
+ * 
+ * 
+ */
 package ar.edu.unlp.info.oo2.ejercicio_01_RedSocial_Solucion1;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -12,11 +12,13 @@ public class ReTweet2 extends Tweet2  {
 	
 
 	public String getContenido() {
-		return this.tweetOrigen.getContenido();
+		return ( this.tweetOrigen != null ) ? this.tweetOrigen.getContenido()
+		                                    : "publicacion eliminada";
 	}
 	
 	
 	public void eliminar() {
 		this.tweetOrigen = null;
 	}
+
 }
