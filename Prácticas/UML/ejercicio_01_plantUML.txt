@@ -1,0 +1,51 @@
+@startuml
+
+class Twitter {
+  + getUsuarios() : Usuario[*]
+  + getUsuario( screenName : String ) : Usuario
+  + registrarUsuario( screenName : String ) : Usuario
+  + eliminarUsuario( screenName : String ) : Boolean
+}
+
+class Usuario {
+  - screenName : String
+  + getScreenName() : String
+  + getTweets() : Tweet[*]
+  + publicarTweet( texto : String ) : Tweet
+  + publicarRetweet( tweet : Tweet ) : ReTweet
+  + eliminarTweet( tweet : Tweet ) : Boolean
+  + eliminarTweets() : boolean
+}
+
+class Tweet {
+  - autor : Usuario
+  + getAutor()
+  + {abstract} getContenido() : String
+  + {abstract} eliminar() 
+}
+
+class TweetOriginal {
+  - autor : Usuario
+  - texto: String
+  + getContenido() : String
+  + eliminar()
+}
+
+class ReTweet {
+  - autor : Usuario
+  - texto: String
+  - tweetOrigen
+  + getContenido() : String
+  + eliminar()
+}
+
+
+Twitter --> "usuarios *" Usuario
+Usuario --> "tweets *" Tweet
+Usuario <-- "usuario" Tweet 
+Tweet <|-- TweetOriginal
+Tweet <-- "tweetOrigen" ReTweet
+Tweet <|-- ReTweet
+
+
+@enduml
