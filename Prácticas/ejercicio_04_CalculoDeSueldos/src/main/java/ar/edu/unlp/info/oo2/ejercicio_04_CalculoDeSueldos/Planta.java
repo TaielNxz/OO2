@@ -1,11 +1,11 @@
 package ar.edu.unlp.info.oo2.ejercicio_04_CalculoDeSueldos;
 
-public class Planta extends Empleado {
+public class Planta extends ConFamilia {
 
 	private int antiguedad;
 	
 	public Planta( String nombre, boolean casado, int cantHijos, int antiguedad ) {
-		super( nombre, casado, cantHijos);
+		super( nombre, casado, cantHijos );
 		this.antiguedad = antiguedad;
 	}
 
@@ -16,13 +16,8 @@ public class Planta extends Empleado {
 
 	
 	public double sueldoAdicional() {
-		
-		double adicional = ( 2000 * this.getCantHijos() ) + ( 2000 * antiguedad );
-		
-		return this.isCasado() ? adicional + 5000 
-							   : adicional ;
+		return super.sueldoAdicional() + ( 2000 * antiguedad );
 	}
 
-
-
+	
 }

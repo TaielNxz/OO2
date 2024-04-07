@@ -1,6 +1,6 @@
 package ar.edu.unlp.info.oo2.ejercicio_04_CalculoDeSueldos;
 
-public class Temporario extends Empleado {
+public class Temporario extends ConFamilia {
 
 	int cantHoras;
 	
@@ -16,11 +16,7 @@ public class Temporario extends Empleado {
 
 	
 	public double sueldoAdicional() {
-		
-		double adicional = 2000 * this.getCantHijos() ;
-		
-		return this.isCasado() ? adicional + 5000 
-							   : adicional ;
+		return super.sueldoAdicional();
 	}
 
 }

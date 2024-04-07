@@ -4,8 +4,8 @@ public class Pasante extends Empleado {
 
 	private int cantExamenes;
 	
-	public Pasante( String nombre , boolean casado, int cantHijos, int cantExamenes ) {
-		super( nombre, casado, cantHijos );
+	public Pasante( String nombre , int cantExamenes ) {
+		super( nombre );
 		this.cantExamenes = cantExamenes;
 	}
 	
