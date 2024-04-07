@@ -1,0 +1,44 @@
+@startuml
+
+class Empleado {
+  - nombre : String
+  + getNombre() : String
+  + sueldo() : Real
+  + descuento() : Real
+  + {abstract} sueldoBasico() : Real
+  + {abstract} sualdoAdicional() : Real
+}
+
+class ConFamilia {
+  - casado : Boolean
+  - cantHijos : Integer
+  + isCasado() : Boolean
+  + getHijos() : Boolean
+  + getCantHijos() : Integer
+  + sueldoAdicional() : Real
+}
+
+class Planta {
+  - antiguedad : Integer
+  + sueldoBasico() : Real
+  + sueldoAdicional() : Real
+}
+
+class Temporario {
+  - cantHoras : Integer
+  + sueldoBasico() : Real
+  + sueldoAdicional() : Real
+}
+
+class Pasante {
+  - cantExamenes : Integer
+  + sueldoBasico() : Real
+  + sueldoAdicional() : Real
+}
+
+Empleado <|-- ConFamilia
+Empleado <|-- Pasante
+ConFamilia <|-- Planta
+ConFamilia <|-- Temporario
+
+@enduml
