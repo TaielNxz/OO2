@@ -21,7 +21,7 @@ public class DatabaseRealAccessTest {
     @Test
     void testGetSearchResults() {
         assertEquals( Arrays.asList("Spiderman", "Marvel") , this.database.getSearchResults("select * from comics where id=1") );
-        assertEquals(Collections.emptyList(), this.database.getSearchResults("select * from comics where id=10"));
+        assertEquals( Collections.emptyList(), this.database.getSearchResults("select * from comics where id=10") );
     }
 
     

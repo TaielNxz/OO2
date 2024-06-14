@@ -19,7 +19,7 @@ public class DatabaseProxyTest {
 	@BeforeEach
 	public void setUp() throws Exception {
 		this.database = new DatabaseRealAccess();
-		this.proxy = new DatabaseProxy(database);
+		this.proxy = new DatabaseProxy( database ,"1234" );
 	}
 
 	
@@ -28,7 +28,7 @@ public class DatabaseProxyTest {
 		Exception exceptionPending = assertThrows(RuntimeException.class, () -> {this.proxy.getSearchResults("select * from comics where id=1");});
 		assertEquals("access denied",exceptionPending.getMessage());
 
-		this.proxy.logIn();
+		this.proxy.logIn( "1234" );
         assertEquals(Arrays.asList("Spiderman", "Marvel"), this.proxy.getSearchResults("select * from comics where id=1"));
         assertEquals(Collections.emptyList(), this.proxy.getSearchResults("select * from comics where id=10"));
         
@@ -43,13 +43,13 @@ public class DatabaseProxyTest {
     	Exception exceptionPending = assertThrows(RuntimeException.class, () -> {this.proxy.insertNewRow(Arrays.asList("Patoruzú", "La flor"));});
 		assertEquals("access denied",exceptionPending.getMessage());
 		
-		this.proxy.logIn();
-		assertEquals(3, this.proxy.insertNewRow(Arrays.asList("Patoruzú", "La flor")));
-        assertEquals(Arrays.asList("Patoruzú", "La flor"), this.proxy.getSearchResults("select * from comics where id=3"));
+		this.proxy.logIn( "1234" );
+		assertEquals( 3 , this.proxy.insertNewRow(Arrays.asList("Patoruzú", "La flor")) );
+        assertEquals( Arrays.asList("Patoruzú", "La flor"), this.proxy.getSearchResults("select * from comics where id=3") );
         
         this.proxy.closeSession();
-        Exception exceptionPending2 = assertThrows(RuntimeException.class, () -> {this.proxy.insertNewRow(Arrays.asList("Patoruzú", "La flor"));});
-		assertEquals("access denied",exceptionPending2.getMessage());
+        Exception exceptionPending2 = assertThrows(RuntimeException.class, () -> {this.proxy.insertNewRow(Arrays.asList("Patoruzú", "La flor"));} );
+		assertEquals( "access denied",exceptionPending2.getMessage());
        
     }
 
