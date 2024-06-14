@@ -33,7 +33,7 @@ public class DatabaseProxy implements DatabaseAccess {
 	}
 	
 	
-	public void LogOut() {
+	public void logOut() {
 		this.isLog = false;
 	}
 	
