@@ -8,7 +8,7 @@ public class DatoPromedioCelsius extends Dato {
 
 	
 	public String displayData() {
-		return super.displayData() + " Promedio de temperaturas C: " + Math.round(this.getPromedioCelsius()) + "\n";
+		return super.displayData() + " Promedio de temperaturas: " + Math.round(this.getPromedioCelsius()) + "°C\n";
 	}
 	
 	

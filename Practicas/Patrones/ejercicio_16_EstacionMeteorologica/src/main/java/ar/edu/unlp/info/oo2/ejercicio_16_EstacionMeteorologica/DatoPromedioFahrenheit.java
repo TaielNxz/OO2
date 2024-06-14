@@ -8,7 +8,7 @@ public class DatoPromedioFahrenheit extends Dato {
 	
 	
 	public String displayData() {
-		return super.displayData() + " Promedio de temperaturas F: " + Math.round(this.getPromedioFahrenheit()) + "\n";
+		return super.displayData() + " Promedio de temperaturas: " + Math.round(this.getPromedioFahrenheit()) + "°F\n";
 	}
 	
 	

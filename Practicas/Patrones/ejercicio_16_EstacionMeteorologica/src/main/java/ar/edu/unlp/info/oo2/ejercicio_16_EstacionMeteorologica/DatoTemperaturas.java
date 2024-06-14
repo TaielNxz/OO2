@@ -9,7 +9,7 @@ public class DatoTemperaturas extends Dato {
 	
 	
 	public String displayData() {
-		return super.displayData() + " Lista de Temperaturas Farenheit: " + this.getTemperaturas().toString() + "\n";
+		return super.displayData() + " Lista de Temperaturas (°F): " + this.getTemperaturas().toString() + "\n";
 	}
 	
 	
