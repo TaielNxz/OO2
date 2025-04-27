@@ -1,0 +1,4 @@
+https://reactiveprogramming.io/blog/en/design-patterns/factory-method#
+
+
+https://www.geeksforgeeks.org/java-design-patterns/?ref=next_article_top
