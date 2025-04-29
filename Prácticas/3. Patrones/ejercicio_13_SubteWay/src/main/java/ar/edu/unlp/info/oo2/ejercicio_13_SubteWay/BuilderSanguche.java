@@ -4,20 +4,17 @@ public abstract class BuilderSanguche {
 
 	protected Sanguche sanguche;
 	
-	public abstract void agregarPan();
-	
-	public abstract void agregarAderezo();
-	
-	public abstract void agregarPrincipal();
-	
-	public abstract void agregarAdicional();
-	
 	public void nuevoSanguche() {
 		this.sanguche = new Sanguche();
 	}
-
+	
 	public Sanguche build() {
 		return this.sanguche;
 	}
+	
+	public abstract void agregarPan();
+	public abstract void agregarAderezo();
+	public abstract void agregarPrincipal();
+	public abstract void agregarAdicional();
 	
 }
