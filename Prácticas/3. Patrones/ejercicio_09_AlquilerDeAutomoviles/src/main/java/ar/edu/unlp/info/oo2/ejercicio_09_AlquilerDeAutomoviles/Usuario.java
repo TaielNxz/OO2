@@ -21,4 +21,8 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
+	public void alquilarAuto(AutoEnAlquiler auto) {
+		this.autos.add(auto);
+	}
+
 }

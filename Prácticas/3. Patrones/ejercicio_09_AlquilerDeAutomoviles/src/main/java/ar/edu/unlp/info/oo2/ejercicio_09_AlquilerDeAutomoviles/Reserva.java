@@ -5,11 +5,13 @@ import java.time.LocalDate;
 public class Reserva {
 
 	private AutoEnAlquiler auto;
+	private Usuario usuario;
 	private int cantidadDias;
 	private LocalDate fecha;
 	
-	public Reserva(AutoEnAlquiler auto, int cantidadDias, LocalDate fecha) {
+	public Reserva(AutoEnAlquiler auto, Usuario usuario, int cantidadDias, LocalDate fecha) {
 		this.auto = auto;
+		this.usuario = usuario;
 		this.cantidadDias = cantidadDias;
 		this.fecha = fecha;
 	}
@@ -20,6 +22,14 @@ public class Reserva {
 
 	public void setAuto(AutoEnAlquiler auto) {
 		this.auto = auto;
+	}
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
     public int getCantidadDias() {
@@ -38,11 +48,11 @@ public class Reserva {
 		this.fecha = fecha;
 	}
 
-	double montoAPagar() {
+	public double montoAPagar() {
         return this.cantidadDias * auto.getPrecioPorDia();
     }
 
-    double montoAReembolsar(LocalDate fechaCancelacion) {
+	public double montoAReembolsar(LocalDate fechaCancelacion) {
         return auto.getPoliticaCancelacion().calcularReembolso(this, fechaCancelacion);
     }
 

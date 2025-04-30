@@ -15,7 +15,8 @@ public class PoliticaCancelacionTest {
 
         // Crear reserva para ese auto
         LocalDate fechaReserva = LocalDate.of(2025, 5, 20);
-        Reserva reserva = new Reserva(auto, 5, fechaReserva);  // 5 días de alquiler
+        Usuario usuarioReserva = new Usuario("Taiel");
+        Reserva reserva = new Reserva(auto, usuarioReserva, 5, fechaReserva);  // 5 días de alquiler
         
         // Calcular reembolso con política flexible
         LocalDate fechaCancelacion = LocalDate.of(2025, 5, 10); // 10 de mayo (antes de la reserva)
