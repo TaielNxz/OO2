@@ -1,9 +1,11 @@
 package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
 
-public class Error extends Estado {
+public class Error implements Estado {
 
+	Calculadora calculadora;
+	
 	public Error(Calculadora calculadora) {
-		super(calculadora);
+		this.calculadora = calculadora;
 	}
 	
 	/**

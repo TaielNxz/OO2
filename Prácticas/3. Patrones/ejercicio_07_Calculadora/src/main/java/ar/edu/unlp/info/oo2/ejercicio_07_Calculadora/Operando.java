@@ -1,11 +1,12 @@
 package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
 
-public abstract class Operando extends Estado {
+public abstract class Operando implements Estado {
+	
+	Calculadora calculadora;
 	
 	public Operando(Calculadora calculadora) {
-		super(calculadora);
+		this.calculadora = calculadora;
 	}
-	
 	
 	/**
 	 * Devuelve el resultado actual de la operación realizada.

@@ -1,12 +1,14 @@
 package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
 
-public class EsperandoValorInicial extends Estado {
+public class EsperandoValorInicial implements Estado {
 
+	Calculadora calculadora;
+	
 	public EsperandoValorInicial(Calculadora calculadora) {
-		super(calculadora);
+		this.calculadora = calculadora;
 	}
 
-
+	
 	/**
 	 * Devuelve el resultado actual de la operación realizada.
 	 * Si no se ha realizado ninguna operación, devuelve el valor acumulado.

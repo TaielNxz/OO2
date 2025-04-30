@@ -1,10 +1,11 @@
 package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
 
-public class EsperandoOperador extends Estado {
+public class EsperandoOperador implements Estado {
 
-	
+	Calculadora calculadora;
+
 	public EsperandoOperador(Calculadora calculadora) {
-		super(calculadora);
+		this.calculadora = calculadora;
 	}
 	
 	
