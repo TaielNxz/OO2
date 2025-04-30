@@ -2,11 +2,11 @@ package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
 
 public interface Estado {
 	
-	public abstract String getResultado();
-	public abstract void setValor(double unValor);
-	public abstract void mas();
-	public abstract void menos(); 
-	public abstract void por();
-	public abstract void dividido();
+	public String getResultado();
+	public void setValor(double unValor);
+	public void mas();
+	public void menos(); 
+	public void por();
+	public void dividido();
 	
 }
