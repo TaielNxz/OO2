@@ -32,19 +32,19 @@ public class EsperandoOperador extends Estado {
 	  * valor recibido como parámetro, al valor actual y guardará el resultado
     */
 	 public void mas() {
-		 this.calculadora.setState(new EsperandoValorOperacion(this.calculadora,"+"));
+		 this.calculadora.setState(new Sumando(this.calculadora));
 	 }
 	 
 	 public void menos() {
-		 this.calculadora.setState(new EsperandoValorOperacion(this.calculadora,"-"));
+		 this.calculadora.setState(new Restando(this.calculadora));
 	 }
 	 
 	 public void por() {
-		 this.calculadora.setState(new EsperandoValorOperacion(this.calculadora,"*"));
+		 this.calculadora.setState(new Multiplicando(this.calculadora));
 	 }
 	 
 	 public void dividido() {
-		 this.calculadora.setState(new EsperandoValorOperacion(this.calculadora,"/"));
+		 this.calculadora.setState(new Dividiendo(this.calculadora));
 	 }
 
 }

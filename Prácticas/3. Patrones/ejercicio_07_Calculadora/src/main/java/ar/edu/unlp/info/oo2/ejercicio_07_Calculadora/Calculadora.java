@@ -7,7 +7,7 @@ public class Calculadora {
 	Double valorActual;
 	
 	public Calculadora() {
-		this.state = new EsperandoValor(this);
+		this.state = new EsperandoValorInicial(this);
 		this.valorAcumulado = 0.0;
 		this.valorActual = 0.0;
 	}
@@ -58,7 +58,7 @@ public class Calculadora {
       * Pone en cero el valor acumulado y reinicia la calculadora
 	 */
 	 public void borrar() {
-		 this.state = new EsperandoValor(this);
+		 this.state = new EsperandoValorInicial(this);
 	 	 this.valorAcumulado = 0.0;
 	 }
 	 

@@ -1,8 +1,8 @@
 package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
 
-public class EsperandoValor extends Estado {
+public class EsperandoValorInicial extends Estado {
 
-	public EsperandoValor(Calculadora calculadora) {
+	public EsperandoValorInicial(Calculadora calculadora) {
 		super(calculadora);
 	}
 
@@ -34,22 +34,22 @@ public class EsperandoValor extends Estado {
 	* valor recibido como parámetro, al valor actual y guardará el resultado
 	*/
     public void mas() {
-        this.calculadora.setState(new EsperandoValorOperacion(this.calculadora, "+"));
+        this.calculadora.setState(new Sumando(this.calculadora));
     }
     
     
     public void menos() {
-        this.calculadora.setState(new EsperandoValorOperacion(this.calculadora, "-"));
+        this.calculadora.setState(new Restando(this.calculadora));
     }
     
     
     public void por() {
-        this.calculadora.setState(new EsperandoValorOperacion(this.calculadora, "*"));
+        this.calculadora.setState(new Multiplicando(this.calculadora));
     }
     
     
     public void dividido() {
-        this.calculadora.setState(new EsperandoValorOperacion(this.calculadora, "/"));
+        this.calculadora.setState(new Dividiendo(this.calculadora));
     }
 
 }

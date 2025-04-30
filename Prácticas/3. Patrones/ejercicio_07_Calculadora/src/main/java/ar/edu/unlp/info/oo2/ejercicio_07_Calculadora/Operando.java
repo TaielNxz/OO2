@@ -1,12 +1,9 @@
 package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
 
-public class EsperandoValorOperacion extends Estado {
-
-	private String operacion;
+public abstract class Operando extends Estado {
 	
-	public EsperandoValorOperacion(Calculadora calculadora, String operacion) {
+	public Operando(Calculadora calculadora) {
 		super(calculadora);
-		this.operacion = operacion;
 	}
 	
 	
@@ -24,37 +21,19 @@ public class EsperandoValorOperacion extends Estado {
 	* Asigna un valor para operar.
 	* si hay una operación en curso, el valor será utilizado en la operación
 	*/
-	public void setValor(double unValor) {
-		
-		double resultado;
-		
-		// NO ME GUSTA ESTO
-        switch (this.operacion) {
-            case "+":
-                resultado = this.calculadora.getValorAcumulado() + unValor;
-                break;
-            case "-":
-                resultado = this.calculadora.getValorAcumulado() - unValor;
-                break;
-            case "*":
-                resultado = this.calculadora.getValorAcumulado() * unValor;
-                break;
-            case "/":
-                if (unValor == 0) {
-                	this.calculadora.setState(new Error(this.calculadora));
-                    return;
-                }
-                resultado = this.calculadora.getValorAcumulado() / unValor;
-                break;
-            default:
-                return;
-        }
-		
+	public abstract void setValor(double unValor);
+	
+	
+	/**
+	* Metodo que me inventé para no repetir esto en cada sublcase.
+	* se almacenan los valores y se cambia de estado
+	*/
+    protected void finalizarOperacion(double resultado, double valorActual) {
         this.calculadora.setValorAcumulado(resultado);
-        this.calculadora.setValorActual(unValor);
-        this.calculadora.setState(new EsperandoValor(this.calculadora));
-	}
-
+        this.calculadora.setValorActual(valorActual);
+        this.calculadora.setState(new EsperandoValorInicial(this.calculadora));
+    }
+    
 	
 	/**
 	  * Indica que la calculadora debe esperar un nuevo valor.
