@@ -18,7 +18,7 @@ public class Decodificador {
 		
 	}
 
-	public Sugerencia getSugerencia() {
+	public Sugerencia getCriterioSugerencia() {
 		return this.criterioSugerencia;
 	}
 	
