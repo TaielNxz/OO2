@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unlp.info.oo2.ejercicio_03_MediaPlayer.media.*;
+
 class MediaPlayerTest {
 
 	MediaPlayer reproductor;
@@ -47,9 +49,17 @@ class MediaPlayerTest {
 	@Test
 	void testReproducirVideoStream() {
 		VideoStream videoStream = new VideoStream();
-		AdapterVideoStream adapterVideoStream = new AdapterVideoStream(videoStream);
+		VideoStreamAdapter adapterVideoStream = new VideoStreamAdapter(videoStream);
 		reproductor.addMedia( adapterVideoStream );
 		assertEquals( "reproduciendo VideoStream..." , reproductor.play(0) );
 	}
+	
+	@Test
+	void testIndiceInvalido() {
+		assertThrows(IndexOutOfBoundsException.class, () -> {
+			reproductor.play(0);
+		});
+	}
+
 
 }
