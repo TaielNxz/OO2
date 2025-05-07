@@ -3,13 +3,16 @@ package ar.edu.unlp.info.oo2.ejercicio_01b_JSONSimple;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.edu.unlp.info.oo2.ejercicio_01b_JSONSimple.exporters.VoorheesExporter;
+
 public class Biblioteca {
+	
 	private List<Socio> socios;
 	private VoorheesExporter exporter;
 
 	public Biblioteca() {
 		socios = new ArrayList<>();
-		exporter= new VoorheesExporter(); 
+		exporter = new VoorheesExporter(); 
 	}
 
 	public void agregarSocio(Socio socio) {
@@ -30,4 +33,5 @@ public class Biblioteca {
 	public void setExporter(VoorheesExporter exporter) {
 		this.exporter = exporter;
 	}
+
 }
