@@ -17,11 +17,6 @@ public class BuilderCompuGamer implements BuilderCompu {
 	}
     
     @Override
-	public Compu build() {
-		return this.compu;
-	}
-    
-    @Override
 	public void agregarProcesador() {
         this.compu.agregarComponente(catalogo.getComponente("Procesador Gamer"));
         this.compu.agregarComponente(catalogo.getComponente("Pad térmico"));
@@ -54,5 +49,10 @@ public class BuilderCompuGamer implements BuilderCompu {
         double fuenteW = consumoTotal * 1.5;
         this.compu.agregarComponente(catalogo.getComponente("Fuente " + (int)fuenteW + " W"));
 	}
-
+    
+    @Override
+	public Compu build() {
+		return this.compu;
+	}
+    
 }

@@ -15,11 +15,6 @@ public class BuilderCompuIntermedia implements BuilderCompu {
     	this.compu = new Compu("Intermedia", cliente, fecha);
     	this.catalogo = new Catalogo();
 	}
-    
-    @Override
-	public Compu build() {
-		return this.compu;
-	}
 
 	@Override
 	public void agregarProcesador() {
@@ -47,4 +42,9 @@ public class BuilderCompuIntermedia implements BuilderCompu {
 		this.compu.agregarComponente(catalogo.getComponente("Fuente 800W"));
 	}
 
+    @Override
+	public Compu build() {
+		return this.compu;
+	}
+    
 }

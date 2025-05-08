@@ -17,11 +17,6 @@ public class BuilderCompuBasica implements BuilderCompu {
 	}
     
     @Override
-	public Compu build() {
-		return this.compu;
-	}
-    
-    @Override
 	public void agregarProcesador() {
 		this.compu.agregarComponente(catalogo.getComponente("Procesador Básico"));
 	}
@@ -46,4 +41,9 @@ public class BuilderCompuBasica implements BuilderCompu {
 		this.compu.agregarComponente(catalogo.getComponente("Gabinete Estándar"));
 	}
 
+    @Override
+	public Compu build() {
+		return this.compu;
+	}
+    
 }
