@@ -1,6 +1,6 @@
 package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
 
-import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.estado.EsperandoValorInicial;
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.estado.ListoParaOperar;
 import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.estado.Estado;
 
 public class Calculadora {
@@ -10,7 +10,7 @@ public class Calculadora {
 	Double valorActual;
 	
 	public Calculadora() {
-		this.state = new EsperandoValorInicial(this);
+		this.state = new ListoParaOperar(this);
 		this.valorAcumulado = 0.0;
 		this.valorActual = 0.0;
 	}
@@ -61,7 +61,7 @@ public class Calculadora {
       * Pone en cero el valor acumulado y reinicia la calculadora
 	 */
 	 public void borrar() {
-		 this.state = new EsperandoValorInicial(this);
+		 this.state = new ListoParaOperar(this);
 	 	 this.valorAcumulado = 0.0;
 	 }
 	 

@@ -34,7 +34,7 @@ public abstract class Operando implements Estado {
     protected void finalizarOperacion(double resultado, double valorActual) {
         this.calculadora.setValorAcumulado(resultado);
         this.calculadora.setValorActual(valorActual);
-        this.calculadora.setState(new EsperandoValorInicial(this.calculadora));
+        this.calculadora.setState(new ListoParaOperar(this.calculadora));
     }
     
 	
