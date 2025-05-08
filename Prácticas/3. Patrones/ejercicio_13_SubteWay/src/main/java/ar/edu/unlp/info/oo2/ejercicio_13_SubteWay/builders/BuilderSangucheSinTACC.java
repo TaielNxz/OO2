@@ -3,7 +3,7 @@ package ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.builders;
 import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.Ingrediente;
 import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.Sanguche;
 
-public class BuilderSangucheSinTACC extends BuilderSanguche {
+public class BuilderSangucheSinTACC implements BuilderSanguche {
 
 	private Sanguche sanguche;
 	
