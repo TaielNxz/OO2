@@ -1,4 +1,4 @@
-package ar.edu.unlp.info.oo2.ejercicio_20b_MasPersonajes;
+package ar.edu.unlp.info.oo2.ejercicio_20b_MasPersonajes.armaduras;
 
 public class ArmaduraDeCuero extends Armadura {
 	

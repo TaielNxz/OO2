@@ -46,6 +46,11 @@
       <version>5.7.2</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    	<groupId>ar.edu.unlp.info.oo2</groupId>
+    	<artifactId>ejercicio_20_PersonajesDeJuegosDeRol</artifactId>
+    	<version>oo2</version>
+    </dependency>
   </dependencies>
   
   <scm>

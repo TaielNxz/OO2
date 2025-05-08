@@ -2,6 +2,10 @@ package ar.edu.unlp.info.oo2.ejercicio_20b_MasPersonajes;
 
 import java.util.List;
 
+import ar.edu.unlp.info.oo2.ejercicio_20b_MasPersonajes.armaduras.Armadura;
+import ar.edu.unlp.info.oo2.ejercicio_20b_MasPersonajes.armas.Arma;
+import ar.edu.unlp.info.oo2.ejercicio_20b_MasPersonajes.habilidades.Habilidad;
+
 public class Personaje {
 	
     private int vida;
