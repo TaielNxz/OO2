@@ -1,6 +1,9 @@
-package ar.edu.unlp.info.oo2.ejercicio_15_ArmadoDePCs;
+package ar.edu.unlp.info.oo2.ejercicio_15_ArmadoDePCs.builder;
 
 import java.time.LocalDate;
+
+import ar.edu.unlp.info.oo2.ejercicio_15_ArmadoDePCs.Catalogo;
+import ar.edu.unlp.info.oo2.ejercicio_15_ArmadoDePCs.Compu;
 
 public class BuilderCompuGamer implements BuilderCompu {
 

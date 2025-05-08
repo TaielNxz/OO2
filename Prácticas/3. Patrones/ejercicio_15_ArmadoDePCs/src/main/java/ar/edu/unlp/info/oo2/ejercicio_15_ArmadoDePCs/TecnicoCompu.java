@@ -2,6 +2,8 @@ package ar.edu.unlp.info.oo2.ejercicio_15_ArmadoDePCs;
 
 import java.time.LocalDate;
 
+import ar.edu.unlp.info.oo2.ejercicio_15_ArmadoDePCs.builder.BuilderCompu;
+
 public class TecnicoCompu {
 	
     private BuilderCompu builder;
