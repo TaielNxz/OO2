@@ -1,17 +1,28 @@
-package ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem;
+package ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.state;
 
-public class Finished extends State {
+import java.time.Duration;
 
-	public Finished(ToDoItem task) {
-		super(task);
+import ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.ToDoItem;
+
+public abstract class State {
+
+	private ToDoItem task;
+	
+	public State (ToDoItem task) {
+		this.task = task;
 	}
 
+	
+	public ToDoItem getTask() {
+		return task;
+	}
 
+	
 	/**
 	* Pasa el ToDoItem a in-progress (siempre y cuando su estado actual sea
 	* pending, si se encuentra en otro estado, no hace nada)
 	*/
-	public void start() {}
+	public abstract void start();
 
 	
 	/**
@@ -19,16 +30,14 @@ public class Finished extends State {
 	* estado es paused. Caso contrario (pending o finished) genera un error
 	* informando la causa específica del mismo
 	*/
-	public void togglePause() {
-		throw new RuntimeException("ERROR: no puedes pausar o reanudar una tarea finalizada [ state:'Finished' ]");
-	}
+	public abstract void togglePause();
 
 
 	/**
 	* Pasa el ToDoItem a finished (siempre y cuando su estado actual sea 
 	* in-progress o pausada, si se encuentra en otro estado, no hace nada)
 	*/
-	public void finish() {}
+	public abstract void finish();
 
 
 	/**
@@ -37,7 +46,9 @@ public class Finished extends State {
 	* haya transcurrido hasta el momento actual. Si la tarea no se inició,
 	* genera un error informando la causa específica del mismo.
 	*/
-	// public Duration workedTime() {}
+	public Duration workedTime() {
+		return Duration.between( this.task.getStartDate() , this.task.getEndDate() );
+	}
 	 
 	 
 	/**
@@ -45,8 +56,7 @@ public class Finished extends State {
 	* contrario no hace nada."
 	*/
 	public void addComment(String comment) {
-		throw new RuntimeException("ERROR: no puedes agregar un comentario a una tarea finalizada [ state:'Finished' ]");
+		this.task.getComments().add(comment);
 	}
-
 	
 }

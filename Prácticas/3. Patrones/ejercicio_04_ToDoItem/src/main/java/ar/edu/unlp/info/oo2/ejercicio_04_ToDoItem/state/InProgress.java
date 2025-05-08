@@ -1,6 +1,8 @@
-package ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem;
+package ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.state;
 
 import java.time.LocalDateTime;
+
+import ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.ToDoItem;
 
 public class InProgress extends State {
 

@@ -1,23 +1,21 @@
-package ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem;
+package ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.state;
 
-import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class Pending extends State {
+import ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.ToDoItem;
 
-	
-	public Pending(ToDoItem task) {
+public class Paused extends State {
+
+	public Paused(ToDoItem task) {
 		super(task);
 	}
+
 
 	/**
 	* Pasa el ToDoItem a in-progress (siempre y cuando su estado actual sea
 	* pending, si se encuentra en otro estado, no hace nada)
 	*/
-	public void start() {
-		this.getTask().setState( new InProgress(this.getTask()) );
-		this.getTask().setStartDate( LocalDateTime.now() );
-	}
+	public void start() {}
 
 	
 	/**
@@ -26,7 +24,7 @@ public class Pending extends State {
 	* informando la causa específica del mismo
 	*/
 	public void togglePause() {
-		throw new RuntimeException("ERROR: no puedes pausar o reanudar una tarea que aun no ha iniciado [ state:'Pending' ]");
+		this.getTask().setState( new InProgress(this.getTask()) );
 	}
 
 
@@ -34,7 +32,10 @@ public class Pending extends State {
 	* Pasa el ToDoItem a finished (siempre y cuando su estado actual sea 
 	* in-progress o pausada, si se encuentra en otro estado, no hace nada)
 	*/
-	public void finish() {}
+	public void finish() {
+		this.getTask().setState( new Finished(this.getTask()) );
+		this.getTask().setEndDate( LocalDateTime.now() );
+	}
 
 
 	/**
@@ -43,9 +44,7 @@ public class Pending extends State {
 	* haya transcurrido hasta el momento actual. Si la tarea no se inició,
 	* genera un error informando la causa específica del mismo.
 	*/
-	 public Duration workedTime() { 
-		 throw new RuntimeException("ERROR: No puedes obtener la duracionde una tarea que aun no a iniciado [ state:'Pending' ]");
-     }
+	// public Duration workedTime() {}
 	 
 	 
 	/**
@@ -54,5 +53,5 @@ public class Pending extends State {
 	*/
 	// public void addComment(String comment) {}
 
-	
+		
 }

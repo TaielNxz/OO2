@@ -7,6 +7,11 @@ import java.time.LocalDateTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.state.Finished;
+import ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.state.InProgress;
+import ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.state.Paused;
+import ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.state.Pending;
+
 class ToDoItemTest {
 
 	private ToDoItem tareaPending;
@@ -129,7 +134,7 @@ class ToDoItemTest {
         RuntimeException exceptionPending = assertThrows(RuntimeException.class, () -> {
         	this.tareaPending.workedTime();
         });
-        String expectedErrorMessagePending = "ERROR: No puedes obtener la duracionde una tarea que aun no a iniciado [ state:'Pending' ]";
+        String expectedErrorMessagePending = "ERROR: No puedes obtener la duración de una tarea que aun no ha iniciado [ state:'Pending' ]";
         assertEquals(expectedErrorMessagePending, exceptionPending.getMessage());
 		
         // Si se encuentra en "InProgress" deberia devolver el tiempo trascurrido
@@ -156,15 +161,15 @@ class ToDoItemTest {
 
 		// Si se encuentra en "Pending" deberia devolver el comentario
     	this.tareaPending.addComment("Pending comentario");
-    	assertEquals( "Pending comentario" , this.tareaPending.getCommentaries().get(0) );
+    	assertEquals( "Pending comentario" , this.tareaPending.getComments().get(0) );
   
     	// Si se encuentra en "InProgress" deberia devolver el comentario
     	this.tareaInProgress.addComment("InProgress comentario");
-    	assertEquals( "InProgress comentario" , this.tareaInProgress.getCommentaries().get(0) );
+    	assertEquals( "InProgress comentario" , this.tareaInProgress.getComments().get(0) );
 		
     	// Si se encuentra en "Paused" deberia devolver el comentario
     	this.tareaPaused.addComment("Paused comentario");
-    	assertEquals( "Paused comentario" , this.tareaPaused.getCommentaries().get(0) );
+    	assertEquals( "Paused comentario" , this.tareaPaused.getComments().get(0) );
 		
     	// Si se encuentra en "Finished" deberia devolver un error
     	RuntimeException exception = assertThrows(RuntimeException.class, () -> {

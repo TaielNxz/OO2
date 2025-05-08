@@ -1,26 +1,25 @@
-package ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem;
+package ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.state;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 
-public abstract class State {
+import ar.edu.unlp.info.oo2.ejercicio_04_ToDoItem.ToDoItem;
 
-	private ToDoItem task;
+public class Pending extends State {
+
 	
-	public State (ToDoItem task) {
-		this.task = task;
+	public Pending(ToDoItem task) {
+		super(task);
 	}
 
-	
-	public ToDoItem getTask() {
-		return task;
-	}
-
-	
 	/**
 	* Pasa el ToDoItem a in-progress (siempre y cuando su estado actual sea
 	* pending, si se encuentra en otro estado, no hace nada)
 	*/
-	public abstract void start();
+	public void start() {
+		this.getTask().setState( new InProgress(this.getTask()) );
+		this.getTask().setStartDate( LocalDateTime.now() );
+	}
 
 	
 	/**
@@ -28,14 +27,16 @@ public abstract class State {
 	* estado es paused. Caso contrario (pending o finished) genera un error
 	* informando la causa específica del mismo
 	*/
-	public abstract void togglePause();
+	public void togglePause() {
+		throw new RuntimeException("ERROR: no puedes pausar o reanudar una tarea que aun no ha iniciado [ state:'Pending' ]");
+	}
 
 
 	/**
 	* Pasa el ToDoItem a finished (siempre y cuando su estado actual sea 
 	* in-progress o pausada, si se encuentra en otro estado, no hace nada)
 	*/
-	public abstract void finish();
+	public void finish() {}
 
 
 	/**
@@ -44,17 +45,16 @@ public abstract class State {
 	* haya transcurrido hasta el momento actual. Si la tarea no se inició,
 	* genera un error informando la causa específica del mismo.
 	*/
-	public Duration workedTime() {
-		return Duration.between( this.task.getStartDate() ,this.task.getEndDate() );
-	}
+	 public Duration workedTime() { 
+		 throw new RuntimeException("ERROR: No puedes obtener la duración de una tarea que aun no ha iniciado [ state:'Pending' ]");
+     }
 	 
 	 
 	/**
 	* Agrega un comentario a la tarea siempre y cuando no haya finalizado. Caso
 	* contrario no hace nada."
 	*/
-	public void addComment(String comment) {
-		this.task.getCommentaries().add(comment);
-	}
+	// public void addComment(String comment) {}
+
 	
 }
