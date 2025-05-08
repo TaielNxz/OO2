@@ -1,7 +1,17 @@
-package ar.edu.unlp.info.oo2.ejercicio_13_SubteWay;
+package ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.builders;
+
+import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.Ingrediente;
+import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.Sanguche;
 
 public class BuilderSangucheClasico extends BuilderSanguche {
 
+	private Sanguche sanguche;
+	
+	@Override
+	public void nuevoSanguche() {
+		this.sanguche = new Sanguche();
+	}
+	
 	@Override
 	public void agregarPan() {
 		this.sanguche.agregarIngrediente(new Ingrediente("brioche", 100));
@@ -22,4 +32,14 @@ public class BuilderSangucheClasico extends BuilderSanguche {
 		this.sanguche.agregarIngrediente(new Ingrediente("tomate", 80));
 	}
 
+	@Override
+	public Sanguche build() {
+		return this.sanguche;
+	}
+
 }
+
+
+
+
+

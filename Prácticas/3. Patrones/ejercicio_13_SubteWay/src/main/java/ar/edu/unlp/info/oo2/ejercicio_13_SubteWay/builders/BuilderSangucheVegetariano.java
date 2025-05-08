@@ -1,7 +1,17 @@
-package ar.edu.unlp.info.oo2.ejercicio_13_SubteWay;
+package ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.builders;
+
+import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.Ingrediente;
+import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.Sanguche;
 
 public class BuilderSangucheVegetariano extends BuilderSanguche {
 
+	private Sanguche sanguche;
+	
+	@Override
+	public void nuevoSanguche() {
+		this.sanguche = new Sanguche();
+	}
+	
 	@Override
 	public void agregarPan() {
 		this.sanguche.agregarIngrediente(new Ingrediente("pan con semillas", 120));
@@ -20,6 +30,11 @@ public class BuilderSangucheVegetariano extends BuilderSanguche {
 	@Override
 	public void agregarAdicional() {
 		this.sanguche.agregarIngrediente(new Ingrediente("berenjenas al escabeche", 100));
+	}
+
+	@Override
+	public Sanguche build() {
+		return this.sanguche;
 	}
 
 }

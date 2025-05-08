@@ -5,6 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.builders.BuilderSangucheClasico;
+import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.builders.BuilderSangucheSinTACC;
+import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.builders.BuilderSangucheVegano;
+import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.builders.BuilderSangucheVegetariano;
+
 public class SubteWayTest {
 
     private SubteWay subteWay;
