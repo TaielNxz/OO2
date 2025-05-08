@@ -1,5 +1,10 @@
 package ar.edu.unlp.info.oo2.ejercicio_08_DispositivoMovilYConexiones;
 
+import ar.edu.unlp.info.oo2.ejercicio_08_DispositivoMovilYConexiones.calculator.CRC16_Calculator;
+import ar.edu.unlp.info.oo2.ejercicio_08_DispositivoMovilYConexiones.calculator.CRC_Calculator;
+import ar.edu.unlp.info.oo2.ejercicio_08_DispositivoMovilYConexiones.connection.Connection;
+import ar.edu.unlp.info.oo2.ejercicio_08_DispositivoMovilYConexiones.connection.WifiConn;
+
 public class Dispositivo {
 	
 	private Ringer ringer;

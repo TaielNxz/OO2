@@ -1,4 +1,4 @@
-package ar.edu.unlp.info.oo2.ejercicio_08_DispositivoMovilYConexiones;
+package ar.edu.unlp.info.oo2.ejercicio_08_DispositivoMovilYConexiones.calculator;
 
 public class CRC16_Calculator implements CRC_Calculator {
 

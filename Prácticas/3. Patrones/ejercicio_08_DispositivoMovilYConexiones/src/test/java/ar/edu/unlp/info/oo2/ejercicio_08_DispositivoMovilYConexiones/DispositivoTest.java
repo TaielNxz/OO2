@@ -5,6 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unlp.info.oo2.ejercicio_08_DispositivoMovilYConexiones.calculator.CRC16_Calculator;
+import ar.edu.unlp.info.oo2.ejercicio_08_DispositivoMovilYConexiones.calculator.CRC32_Calculator;
+import ar.edu.unlp.info.oo2.ejercicio_08_DispositivoMovilYConexiones.connection.FourGAdapter;
+import ar.edu.unlp.info.oo2.ejercicio_08_DispositivoMovilYConexiones.connection.WifiConn;
+
 class DispositivoTest {
 
     private Dispositivo dispositivo;
