@@ -49,9 +49,8 @@ public class Archivo extends FileSystem {
 	}
 	
 
-	public String listadoDeContenido() {
-		return '/' + this.getNombre() + "\n";
+	protected String listadoDeContenido(String pathBase) {
+	    return pathBase + "/" + this.getNombre() + "\n";
 	}
-
 	
 }

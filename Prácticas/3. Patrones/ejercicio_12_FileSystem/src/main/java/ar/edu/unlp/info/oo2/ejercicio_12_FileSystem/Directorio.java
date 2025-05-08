@@ -3,7 +3,6 @@ package ar.edu.unlp.info.oo2.ejercicio_12_FileSystem;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 public class Directorio extends FileSystem {
@@ -23,7 +22,6 @@ public class Directorio extends FileSystem {
 		this.files.add(archivo);	
 	}
 
-
 	public int tamanoTotalOcupado() {
 		return 32 + (this.files.stream().mapToInt( f -> f.tamanoTotalOcupado() ).sum());
 	}
@@ -36,7 +34,6 @@ public class Directorio extends FileSystem {
 				.orElse(null);
 	}
 
-
 	public Archivo archivoMasNuevo() {
 		return (Archivo) this.files.stream()
 				.map( file -> file.archivoMasNuevo() )
@@ -47,11 +44,9 @@ public class Directorio extends FileSystem {
 
 	public FileSystem buscar( String nombre ) {
 		
-	
 	    if ( this.getNombre().equals(nombre) ) {
 	        return this;
 	    } else {
-	    	
 	        // Recorrer todos los archivos dentro de este FileSystem
 	        for (FileSystem file : this.files ) {
 	        	
@@ -74,7 +69,12 @@ public class Directorio extends FileSystem {
 
 	public List<FileSystem> buscarTodos(String nombre) {
 		
-        List<FileSystem> encontrados = new ArrayList<>();
+		List<FileSystem> encontrados = new ArrayList<>();
+		
+		// Chusmear si hay que agregar al propio directorio
+		if (this.getNombre().equals(nombre)) {
+		    encontrados.add(this);
+		}
 
         // Buscar recursivamente en los subdirectorios
         for ( FileSystem file : this.files ) {
@@ -84,17 +84,19 @@ public class Directorio extends FileSystem {
         return encontrados;
 	}
 
-
-	public String listadoDeContenido() {
-    	
-        StringBuilder contenido = new StringBuilder();
-        
-        this.files.stream()
-        	.forEach( c -> contenido.append("/")
-        							.append(this.getNombre())
-        							.append( c.listadoDeContenido()));
-
-        return contenido.toString();
-    }
+	@Override
+	protected String listadoDeContenido(String pathBase) {
+		
+	    StringBuilder contenido = new StringBuilder();
+	    
+	    String currentPath = pathBase + "/" + this.getNombre();
+	    contenido.append(currentPath).append("\n");
+	    
+	    for (FileSystem fs : this.files) {
+	        contenido.append(fs.listadoDeContenido(currentPath));
+	    }
+	    
+	    return contenido.toString();
+	}
 
 }

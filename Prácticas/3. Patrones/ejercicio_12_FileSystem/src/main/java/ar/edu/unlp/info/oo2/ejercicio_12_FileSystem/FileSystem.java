@@ -55,7 +55,7 @@ public abstract class FileSystem {
      	 /Directorio B
 
 	 */
-	public abstract String listadoDeContenido();
+	protected abstract String listadoDeContenido(String pathBase);
 
 }
 
