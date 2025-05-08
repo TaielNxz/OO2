@@ -1,4 +1,7 @@
-package ar.edu.unlp.info.oo2.ejercicio_06_Excursiones;
+package ar.edu.unlp.info.oo2.ejercicio_06_Excursiones.estado;
+
+import ar.edu.unlp.info.oo2.ejercicio_06_Excursiones.Excursion;
+import ar.edu.unlp.info.oo2.ejercicio_06_Excursiones.Usuario;
 
 public class Provisoria extends Estado  {
 
@@ -6,11 +9,7 @@ public class Provisoria extends Estado  {
 		super(excursion);
 	}
 
-
 	public void inscribir(Usuario usuario) {
-		
-		Excursion excursion = this.getExcursion();
-		
 		excursion.getInscriptos().add(usuario);
 		
 		if ( excursion.alcanzoCupoMinimo() ) {
@@ -19,10 +18,9 @@ public class Provisoria extends Estado  {
 		
 	}
 	
-	
 	public String obtenerInformacion() {
-		return "Faltantes para el cupo minimo: " + this.getExcursion().faltantesParaCupoMinimo();
+		return super.obtenerInformacion() + "Faltantes para el cupo minimo: " + excursion.faltantesParaCupoMinimo();
+		
 	};
-
 
 }

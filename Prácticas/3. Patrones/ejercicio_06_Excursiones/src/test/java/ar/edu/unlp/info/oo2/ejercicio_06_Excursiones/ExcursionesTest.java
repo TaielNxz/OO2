@@ -3,10 +3,13 @@ package ar.edu.unlp.info.oo2.ejercicio_06_Excursiones;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
-import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import ar.edu.unlp.info.oo2.ejercicio_06_Excursiones.estado.Completa;
+import ar.edu.unlp.info.oo2.ejercicio_06_Excursiones.estado.Definitiva;
+import ar.edu.unlp.info.oo2.ejercicio_06_Excursiones.estado.Provisoria;
 
 class ExcursionesTest {
 
@@ -61,62 +64,78 @@ class ExcursionesTest {
 		assertEquals( 2 , excursion.getInscriptos().size() );
 	}
 
-	 @Test
-	 public void testObtenerInformacion() {	 
+	@Test
+	public void testObtenerInformacion() {	 
 
-			/*  
-			 *  String esperado de una excursion con State 'Provisoria'
-		 	 *  
-		 	 *  Si la excursión no alcanza el cupo mínimo, la información es la siguiente: nombre,
-		 	 *  costo, fechas, punto de encuentro, cantidad de usuarios faltantes para alcanzar el
-		 	 *  cupo mínimo.
-		 	*/
-		 	String expectedInfo1 = "Nombre de la excursion: Dos días en kayak bajando el Paraná\n" +
-	                                "Costo: 1000.0\n" +
-	                                "Fecha de inicio: 2000-12-01\n" +
-	                                "Fecha de fin: 2000-12-08\n" +
-	                                "Punto de encuentro: Punto de encuentro 1\n" +
-	                                "Faltantes para el cupo minimo: 1";
-	        assertEquals(expectedInfo1, excursion.obtenerInformacion());
+		/*  
+		 *  String esperado de una excursion con State 'Provisoria'
+	 	 *  
+	 	 *  Si la excursión no alcanza el cupo mínimo, la información es la siguiente: nombre,
+	 	 *  costo, fechas, punto de encuentro, cantidad de usuarios faltantes para alcanzar el
+	 	 *  cupo mínimo.
+	 	*/
+	 	String expectedInfo1 = "Nombre de la excursion: Dos días en kayak bajando el Paraná\n" +
+                                "Costo: 1000.0\n" +
+                                "Fecha de inicio: 2000-12-01\n" +
+                                "Fecha de fin: 2000-12-08\n" +
+                                "Punto de encuentro: Punto de encuentro 1\n" +
+                                "Faltantes para el cupo minimo: 1";
+        assertEquals(expectedInfo1, excursion.obtenerInformacion());
 
-	        
-	        // agregamos un usuario	        
-	        this.excursion.inscribirUsuario(usuario1);
-	        
-	        
-			/*  
-			 *  String esperado de una excursion con State 'Definitiva'
-			 *  
-			 *  Si la excursión alcanzó el cupo mínimo pero aún no el máximo, la información es la
-			 *  siguiente: nombre, costo, fechas, punto de encuentro, los mails de los usuarios
-			 *  inscriptos y cantidad de usuarios faltantes para alcanzar el cupo máximo.
-		 	*/
-	        String expectedInfo2 = "Nombre de la excursion: Dos días en kayak bajando el Paraná\n" +
-	                                "Costo: 1000.0\n" +
-	                                "Fecha de inicio: 2000-12-01\n" +
-	                                "Fecha de fin: 2000-12-08\n" +
-	                                "Punto de encuentro: Punto de encuentro 1\n" +
-	                                "Faltantes para el cupo minimo: 0\n" +
-	                                "Mails de los usuarios inscriptos: mail1@hotmail.com";
-	        assertEquals(expectedInfo2, excursion.obtenerInformacion());
+        
+        // agregamos un usuario	        
+        this.excursion.inscribirUsuario(usuario1);
+        
+        
+		/*  
+		 *  String esperado de una excursion con State 'Definitiva'
+		 *  
+		 *  Si la excursión alcanzó el cupo mínimo pero aún no el máximo, la información es la
+		 *  siguiente: nombre, costo, fechas, punto de encuentro, los mails de los usuarios
+		 *  inscriptos y cantidad de usuarios faltantes para alcanzar el cupo máximo.
+	 	*/
+        String expectedInfo2 = "Nombre de la excursion: Dos días en kayak bajando el Paraná\n" +
+                                "Costo: 1000.0\n" +
+                                "Fecha de inicio: 2000-12-01\n" +
+                                "Fecha de fin: 2000-12-08\n" +
+                                "Punto de encuentro: Punto de encuentro 1\n" +
+                                "Faltantes para el cupo minimo: 0\n" +
+                                "Mails de los usuarios inscriptos: mail1@hotmail.com";
+        assertEquals(expectedInfo2, excursion.obtenerInformacion());
 
-	        
-	        // agregamos otro usuario	        
-	        this.excursion.inscribirUsuario(usuario2);
-	        
-	        
-			/*  
-			 *  String esperado de una excursion con State 'Completa'
-			 *  
-			 *  Si la excursión alcanzó el cupo máximo, la información solamente incluye nombre,
-			 *  costo, fechas y punto de encuentro
-		 	*/ 
-	        String expectedInfo3 = "Nombre de la excursion: Dos días en kayak bajando el Paraná\n" +
-	                                "Costo: 1000.0\n" +
-	                                "Fecha de inicio: 2000-12-01\n" +
-	                                "Fecha de fin: 2000-12-08\n" +
-	                                "Punto de encuentro: Punto de encuentro 1\n";
-	        assertEquals(expectedInfo3, excursion.obtenerInformacion());
-	    }
+        
+        // agregamos otro usuario	        
+        this.excursion.inscribirUsuario(usuario2);
+        
+        
+		/*  
+		 *  String esperado de una excursion con State 'Completa'
+		 *  
+		 *  Si la excursión alcanzó el cupo máximo, la información solamente incluye nombre,
+		 *  costo, fechas y punto de encuentro
+	 	*/ 
+        String expectedInfo3 = "Nombre de la excursion: Dos días en kayak bajando el Paraná\n" +
+                                "Costo: 1000.0\n" +
+                                "Fecha de inicio: 2000-12-01\n" +
+                                "Fecha de fin: 2000-12-08\n" +
+                                "Punto de encuentro: Punto de encuentro 1\n";
+        assertEquals(expectedInfo3, excursion.obtenerInformacion());
+ 	 }
+
 	
+	 @Test
+	 void testUsuarioEnEspera() {
+	 	// Cupo máximo = 2
+	 	excursion.inscribirUsuario(usuario1);
+	 	excursion.inscribirUsuario(usuario2);
+
+	 	// Usuario 3 llega cuando ya está completa
+	 	this.usuario3 = new Usuario("nombre3", "apellido3", "mail3@hotmail.com");
+	 	excursion.inscribirUsuario(usuario3);
+
+	 	// Verificamos que usuario3 fue a la lista de espera
+	 	assertEquals(1, excursion.getEnEspera().size());
+	 	assertEquals("mail3@hotmail.com", excursion.getEnEspera().get(0).getEmail());
+	 }
+
 }
