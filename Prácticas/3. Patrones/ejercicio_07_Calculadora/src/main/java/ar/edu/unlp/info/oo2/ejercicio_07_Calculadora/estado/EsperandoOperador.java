@@ -1,4 +1,10 @@
-package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
+package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.estado;
+
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.Calculadora;
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.operando.Dividiendo;
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.operando.Multiplicando;
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.operando.Restando;
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.operando.Sumando;
 
 public class EsperandoOperador implements Estado {
 

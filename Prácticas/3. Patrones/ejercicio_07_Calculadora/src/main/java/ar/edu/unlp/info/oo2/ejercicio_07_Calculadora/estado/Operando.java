@@ -1,8 +1,10 @@
-package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
+package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.estado;
+
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.Calculadora;
 
 public abstract class Operando implements Estado {
 	
-	Calculadora calculadora;
+	protected Calculadora calculadora;
 	
 	public Operando(Calculadora calculadora) {
 		this.calculadora = calculadora;

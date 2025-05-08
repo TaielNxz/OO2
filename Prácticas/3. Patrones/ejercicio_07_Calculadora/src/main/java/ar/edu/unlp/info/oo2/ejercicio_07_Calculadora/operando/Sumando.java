@@ -1,10 +1,12 @@
-package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
+package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.operando;
+
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.Calculadora;
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.estado.Operando;
 
 public class Sumando extends Operando {
 
 	public Sumando(Calculadora calculadora) {
 		super(calculadora);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

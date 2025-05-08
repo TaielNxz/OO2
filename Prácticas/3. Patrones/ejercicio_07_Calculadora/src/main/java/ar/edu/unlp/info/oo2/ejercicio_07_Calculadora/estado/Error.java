@@ -1,4 +1,6 @@
-package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
+package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.estado;
+
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.Calculadora;
 
 public class Error implements Estado {
 

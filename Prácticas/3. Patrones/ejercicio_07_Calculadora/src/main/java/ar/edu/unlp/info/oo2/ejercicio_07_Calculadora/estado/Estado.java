@@ -1,7 +1,7 @@
-package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
+package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.estado;
 
 public interface Estado {
-	
+
 	public String getResultado();
 	public void setValor(double unValor);
 	public void mas();

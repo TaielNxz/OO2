@@ -1,5 +1,8 @@
 package ar.edu.unlp.info.oo2.ejercicio_07_Calculadora;
 
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.estado.EsperandoValorInicial;
+import ar.edu.unlp.info.oo2.ejercicio_07_Calculadora.estado.Estado;
+
 public class Calculadora {
 
 	Estado state;
