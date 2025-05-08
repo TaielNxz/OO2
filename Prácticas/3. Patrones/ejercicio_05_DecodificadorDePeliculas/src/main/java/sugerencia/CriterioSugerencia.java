@@ -1,9 +1,12 @@
-package ar.edu.unlp.info.oo2.ejercicio_05_DecodificadorDePeliculas;
+package sugerencia;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public abstract class Sugerencia {
+import ar.edu.unlp.info.oo2.ejercicio_05_DecodificadorDePeliculas.Decodificador;
+import ar.edu.unlp.info.oo2.ejercicio_05_DecodificadorDePeliculas.Pelicula;
+
+public abstract class CriterioSugerencia {
 	
 	public List<Pelicula> obtenerSugerencias( Decodificador decodificador ) {
 		return this.sugerirPeliculas(decodificador).stream()

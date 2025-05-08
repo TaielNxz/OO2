@@ -1,9 +1,12 @@
-package ar.edu.unlp.info.oo2.ejercicio_05_DecodificadorDePeliculas;
+package sugerencia;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class SugerenciaSimilaridad extends Sugerencia {
+import ar.edu.unlp.info.oo2.ejercicio_05_DecodificadorDePeliculas.Decodificador;
+import ar.edu.unlp.info.oo2.ejercicio_05_DecodificadorDePeliculas.Pelicula;
+
+public class CriterioSugerenciaSimilaridad extends CriterioSugerencia {
 
 	@Override
 	public List<Pelicula> sugerirPeliculas( Decodificador decodificador ) {

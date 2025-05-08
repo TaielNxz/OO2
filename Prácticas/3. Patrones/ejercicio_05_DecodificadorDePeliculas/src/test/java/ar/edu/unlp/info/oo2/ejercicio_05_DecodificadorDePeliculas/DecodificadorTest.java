@@ -7,6 +7,9 @@ import java.time.Year;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import sugerencia.CriterioSugerenciaPuntaje;
+import sugerencia.CriterioSugerenciaSimilaridad;
+
 class DecodificadorTest {
 
 	private Decodificador decodificador;
@@ -58,12 +61,12 @@ class DecodificadorTest {
 		assertTrue( this.decodificador.obtenerSugerencias().contains(ironMan) );
 		
 		// SugerenciaSimilaridad
-		this.decodificador.setCriterioSugerencia(new SugerenciaSimilaridad());
+		this.decodificador.setCriterioSugerencia(new CriterioSugerenciaSimilaridad());
 		assertTrue( this.decodificador.obtenerSugerencias().contains(capitanAmerica) );
 		assertTrue( this.decodificador.obtenerSugerencias().contains(ironMan) );
 		
 		// SugerenciaPuntaje
-		this.decodificador.setCriterioSugerencia(new SugerenciaPuntaje());
+		this.decodificador.setCriterioSugerencia(new CriterioSugerenciaPuntaje());
 		assertTrue(this.decodificador.obtenerSugerencias().contains(capitanAmerica));
 		assertTrue(this.decodificador.obtenerSugerencias().contains(ironMan));
 		assertTrue(this.decodificador.obtenerSugerencias().contains(dunkirk));
@@ -89,7 +92,7 @@ class DecodificadorTest {
 		// 1ro --> capitanAmerica (2016)
 		// 2do --> ironMan (2010)
 		// 3ro --> rambo (1979)
-		this.decodificador.setCriterioSugerencia(new SugerenciaSimilaridad());
+		this.decodificador.setCriterioSugerencia(new CriterioSugerenciaSimilaridad());
 		assertEquals( capitanAmerica , this.decodificador.obtenerSugerencias().get(0) );
 		assertEquals( ironMan , this.decodificador.obtenerSugerencias().get(1) );
 		assertEquals( rambo , this.decodificador.obtenerSugerencias().get(2) );
@@ -102,7 +105,7 @@ class DecodificadorTest {
 		// 1ro --> dunkirk (7.9)(2017)
 		// 2do --> ironMan (7.9)(2010)
 		// 3ro --> capitanAmerica (7.8)
-		this.decodificador.setCriterioSugerencia(new SugerenciaPuntaje());
+		this.decodificador.setCriterioSugerencia(new CriterioSugerenciaPuntaje());
 		assertEquals( dunkirk , this.decodificador.obtenerSugerencias().get(0) );
 		assertEquals( ironMan , this.decodificador.obtenerSugerencias().get(1) );
 		assertEquals( capitanAmerica , this.decodificador.obtenerSugerencias().get(2) );
@@ -115,6 +118,13 @@ class DecodificadorTest {
 		assertFalse( this.decodificador.fueReproducida(ironMan) );
 	}
 	
+	
+	@Test
+	void testTodasVistasNoSugerencias() {
+		decodificador.getPeliculas().forEach(p -> decodificador.agregarReproducida(p));
+		assertTrue(decodificador.obtenerSugerencias().isEmpty());
+	}
+
 	
 	@Test
 	void testMostrarPeliculas() {
