@@ -2,6 +2,10 @@ package ar.edu.unlp.info.oo2.ejercicio_09_AlquilerDeAutomoviles;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+
+import ar.edu.unlp.info.oo2.ejercicio_09_AlquilerDeAutomoviles.politica_de_cancelacion.PoliticaFlexible;
+import ar.edu.unlp.info.oo2.ejercicio_09_AlquilerDeAutomoviles.politica_de_cancelacion.PoliticaModerada;
+
 import java.time.LocalDate;
 
 public class PoliticaCancelacionTest {

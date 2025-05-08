@@ -15,7 +15,18 @@ public class Reserva {
 		this.cantidadDias = cantidadDias;
 		this.fecha = fecha;
 	}
+	
+	public double montoAPagar() {
+        return this.cantidadDias * auto.getPrecioPorDia();
+    }
 
+	public double montoAReembolsar(LocalDate fechaCancelacion) {
+        return auto.getPoliticaCancelacion().calcularReembolso(this, fechaCancelacion);
+    }
+	
+	/*
+	 * Getters y Setters
+	 */
 	public AutoEnAlquiler getAuto() {
 		return auto;
 	}
@@ -47,13 +58,5 @@ public class Reserva {
 	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
-
-	public double montoAPagar() {
-        return this.cantidadDias * auto.getPrecioPorDia();
-    }
-
-	public double montoAReembolsar(LocalDate fechaCancelacion) {
-        return auto.getPoliticaCancelacion().calcularReembolso(this, fechaCancelacion);
-    }
 
 }

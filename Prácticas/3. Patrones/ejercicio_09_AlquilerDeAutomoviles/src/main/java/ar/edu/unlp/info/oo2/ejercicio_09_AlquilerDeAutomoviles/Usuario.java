@@ -12,7 +12,14 @@ public class Usuario {
 		this.nombre = nombre;
 		this.autos = new ArrayList<AutoEnAlquiler>();
 	}
+	
+	public void alquilarAuto(AutoEnAlquiler auto) {
+		this.autos.add(auto);
+	}
 
+	/*
+	 * Getters y Setters
+	 */
 	public String getNombre() {
 		return nombre;
 	}
@@ -21,8 +28,12 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
-	public void alquilarAuto(AutoEnAlquiler auto) {
-		this.autos.add(auto);
+	public List<AutoEnAlquiler> getAutos() {
+		return autos;
+	}
+
+	public void setAutos(List<AutoEnAlquiler> autos) {
+		this.autos = autos;
 	}
 
 }

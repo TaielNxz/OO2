@@ -1,5 +1,7 @@
 package ar.edu.unlp.info.oo2.ejercicio_09_AlquilerDeAutomoviles;
 
+import ar.edu.unlp.info.oo2.ejercicio_09_AlquilerDeAutomoviles.politica_de_cancelacion.PoliticaCancelacion;
+
 public class AutoEnAlquiler {
 
 	private double precioPorDia;
@@ -13,6 +15,9 @@ public class AutoEnAlquiler {
 		this.marca = marca;
 	}
 	
+	/*
+	 * Getters y Setters
+	 */
 	public double getPrecioPorDia() {
 		return precioPorDia;
 	}
