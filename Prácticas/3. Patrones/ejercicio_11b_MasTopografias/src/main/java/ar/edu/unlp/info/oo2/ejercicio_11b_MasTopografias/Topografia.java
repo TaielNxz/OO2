@@ -1,26 +1,20 @@
 package ar.edu.unlp.info.oo2.ejercicio_11b_MasTopografias;
 
-import java.util.List;
-
 public abstract class Topografia {
-
 
 	public abstract double getProporcionAgua();
 	
-	
 	public double getProporcionTierra() {
-		return ( 1 - this.getProporcionAgua() );
-	}
-	
-	
-	public boolean isEquals( Topografia topografia ) {
-		return ( this.getProporcionAgua() == topografia.getProporcionAgua() );
+		return 1 - this.getProporcionAgua();
 	}
 
+	public abstract boolean compararTopografia(Topografia topografia);
 	
-	public Object getTopografia() {
-		return this;
+	@Override
+	public boolean equals(Object objeto) {
+		if (this == objeto) return true;	
+		if (objeto == null || getClass() != objeto.getClass()) return false;
+		return this.compararTopografia((Topografia) objeto);
 	}
-
 
 }
