@@ -1,7 +1,7 @@
 /**
  * 
  */
-package ar.edu.unlp.info.oo2.ejercicio_10_Mensajero;
+package ar.edu.unlp.info.oo2.ejercicio_10_Mensajero.adaptees;
 
 import java.util.Base64;
 

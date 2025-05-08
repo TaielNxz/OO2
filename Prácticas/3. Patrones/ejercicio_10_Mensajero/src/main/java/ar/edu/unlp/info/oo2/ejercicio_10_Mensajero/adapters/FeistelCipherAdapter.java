@@ -1,4 +1,7 @@
-package ar.edu.unlp.info.oo2.ejercicio_10_Mensajero;
+package ar.edu.unlp.info.oo2.ejercicio_10_Mensajero.adapters;
+
+import ar.edu.unlp.info.oo2.ejercicio_10_Mensajero.Cifrado;
+import ar.edu.unlp.info.oo2.ejercicio_10_Mensajero.adaptees.FeistelCipher;
 
 public class FeistelCipherAdapter implements Cifrado {
 	

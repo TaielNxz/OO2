@@ -3,6 +3,9 @@ package ar.edu.unlp.info.oo2.ejercicio_10_Mensajero;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+import ar.edu.unlp.info.oo2.ejercicio_10_Mensajero.adapters.FeistelCipherAdapter;
+import ar.edu.unlp.info.oo2.ejercicio_10_Mensajero.adapters.RC4Adapter;
+
 class MensajeroTest {
 
     @Test
