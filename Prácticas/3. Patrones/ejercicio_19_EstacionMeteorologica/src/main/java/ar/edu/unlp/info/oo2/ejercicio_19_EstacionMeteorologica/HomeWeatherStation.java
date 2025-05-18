@@ -3,7 +3,7 @@ package ar.edu.unlp.info.oo2.ejercicio_19_EstacionMeteorologica;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeWeatherStation {
+public class HomeWeatherStation implements Temperatura {
 
 	private double temperatura;
 	private double presion;

@@ -10,62 +10,53 @@ import org.junit.jupiter.api.Test;
 class TemperaturaTest {
 	
 	private HomeWeatherStation estacion;
-	private HomeWeatherStationAdapter adaptador;
 	
 	private DatoCelsius celsius;
-	private DatoFarenheit farenheits;
-	private DatoPresion presion;
 	private DatoPromedioCelsius promedioCelsius;
 	private DatoMinCelsius minCelsius;
 	private DatoMaxCelsius maxCelsius;
 	private DatoPromedioFahrenheit promedioFahrenheit;
 	private DatoMinFahrenheit minFahrenheit;
 	private DatoMaxFahrenheit maxFahrenheit;
-	private DatoRadiacion radiacion;
 	private DatoTemperaturas temperaturas;
 
 	@BeforeEach
 	public void setUp() throws Exception {
 		
 		this.estacion = new HomeWeatherStation( 100 , 1000 , 5 );
-		this.adaptador = new HomeWeatherStationAdapter(estacion);
-		this.adaptador.getTemperaturas().add( 200.0 );
-		this.adaptador.getTemperaturas().add( 300.0 );
-		this.adaptador.getTemperaturas().add( 400.0 );
+		this.estacion.getTemperaturas().add( 200.0 );
+		this.estacion.getTemperaturas().add( 300.0 );
+		this.estacion.getTemperaturas().add( 400.0 );
 		
-		System.out.println( this.adaptador.getTemperatura() );
-		System.out.println( this.adaptador.getPresion() );
-		System.out.println( this.adaptador.getRadiacionSolar() );
-		System.out.println( this.adaptador.getTemperaturas() );
+		System.out.println( this.estacion.getTemperatura() );
+		System.out.println( this.estacion.getPresion() );
+		System.out.println( this.estacion.getRadiacionSolar() );
+		System.out.println( this.estacion.getTemperaturas() );
 		
 	}
 
 	@Test
 	public void testDisplayData() {
 		
-		this.celsius = new DatoCelsius(adaptador);
-		this.farenheits = new DatoFarenheit(celsius);
-		this.presion = new DatoPresion(farenheits);
-		this.promedioCelsius = new DatoPromedioCelsius(presion);
+		this.celsius = new DatoCelsius(estacion);
+		this.promedioCelsius = new DatoPromedioCelsius(celsius);
 		this.minCelsius = new DatoMinCelsius(promedioCelsius);
 		this.maxCelsius = new DatoMaxCelsius(minCelsius);
 		this.promedioFahrenheit = new DatoPromedioFahrenheit(maxCelsius);
 		this.minFahrenheit = new DatoMinFahrenheit(promedioFahrenheit);
 		this.maxFahrenheit = new DatoMaxFahrenheit(minFahrenheit);
-		this.radiacion = new DatoRadiacion(maxFahrenheit);
-		this.temperaturas = new DatoTemperaturas(radiacion);
+		this.temperaturas = new DatoTemperaturas(maxFahrenheit);
 		
-		
-		String expectedString = " Temperatura Celsius: 38\n"
-							  + " Temperatura Farenheit: 100\n"
-							  + " Presion atmosferica: 1000\n"
+		String expectedString = " Temperatura F: 100.0\n"
+				              + " Presion atmosf: 1000.0\n"
+				              + " Radiacion solar: 5.0\n"
+							  + " Temperatura Celsius: 38\n"
 							  + " Promedio de temperaturas: 149°C\n"
 							  + " Minimo: 93.0°C\n"
 							  + " Maximo: 204.0°C\n"
 							  + " Promedio de temperaturas: 300°F\n"
 							  + " Minimo: 200.0°F\n"
 							  + " Maximo: 400.0°F\n"
-							  + " Radiacion solar: 5\n"
 							  + " Lista de Temperaturas (°F): [200.0, 300.0, 400.0]\n";
 		
 		assertEquals( expectedString , this.temperaturas.displayData() );

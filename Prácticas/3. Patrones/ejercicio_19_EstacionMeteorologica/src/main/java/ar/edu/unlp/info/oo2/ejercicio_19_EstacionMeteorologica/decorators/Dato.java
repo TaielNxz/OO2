@@ -2,7 +2,7 @@ package ar.edu.unlp.info.oo2.ejercicio_19_EstacionMeteorologica;
 
 import java.util.List;
 
-public class Dato implements Temperatura {
+public abstract class Dato implements Temperatura {
 
 	private Temperatura componente;
 	
