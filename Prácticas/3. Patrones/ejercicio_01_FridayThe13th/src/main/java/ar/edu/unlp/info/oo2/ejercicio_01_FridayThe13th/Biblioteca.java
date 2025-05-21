@@ -17,9 +17,7 @@ public class Biblioteca {
 		socios.add(socio);
 	}
 
-	/**
-	 * Retorna la representación JSON de la colección de socios.
-	 */
+	/* Retorna la representación JSON de la colección de socios. */
 	public String exportarSocios() {
 		return exporter.exportar(socios);
 	}
@@ -31,4 +29,5 @@ public class Biblioteca {
 	public void setExporter(VoorheesExporter exporter) {
 		this.exporter = exporter;
 	}
+
 }

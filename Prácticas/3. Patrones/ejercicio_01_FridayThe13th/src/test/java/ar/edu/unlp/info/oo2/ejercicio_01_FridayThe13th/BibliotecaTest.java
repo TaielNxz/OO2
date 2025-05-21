@@ -21,18 +21,22 @@ public class BibliotecaTest {
 	@Test
 	void testExportar() {
 		
-		String stringEsperado = "[\n" +
-			"\t{\n" +
-			"\t\t\"nombre\": \"Arya Stark\",\n" +
-			"\t\t\"email\": \"needle@stark.com\",\n" +
-			"\t\t\"legajo\": \"5234-5\"\n" +
-			"\t},\n" +
-			"\t{\n" +
-			"\t\t\"nombre\": \"Tyron Lannister\",\n" +
-			"\t\t\"email\": \"tyron@thelannisters.com\",\n" +
-			"\t\t\"legajo\": \"2345-2\"\n" +
-			"\t}\n" +
-			"]";
+		String stringEsperado = 
+			    "[" +
+			    "  {" +
+			    "    \"nombre\": \"Arya Stark\"," +
+			    "    \"email\": \"needle@stark.com\"," +
+			    "    \"legajo\": \"5234-5\"" +
+			    "  }," +
+			    "  {" +
+			    "    \"nombre\": \"Tyron Lannister\"," +
+			    "    \"email\": \"tyron@thelannisters.com\"," +
+			    "    \"legajo\": \"2345-2\"" +
+			    "  }" +
+			    "]";
+
+		
+		System.out.print(biblioteca.exportarSocios());
 		
 		/*
 		 * le mandé el replaceAll("\\s+", "") para que borre todos los espacios y tabulaciones

@@ -4,9 +4,7 @@ import java.util.List;
 
 public class VoorheesExporter {
 
-	/**
-	 * Exporta un único socio en formato JSON, con indentación.
-	 */
+	/* Exporta un único socio en formato JSON, con indentación. */
 	private String exportar(Socio socio) {
 		String separator = System.lineSeparator();
 
