@@ -11,6 +11,10 @@ public abstract class Estado {
 		this.excursion = excursion;
 	}
 	
+	public Excursion getExcursion() {
+		return excursion;
+	}
+
 	public abstract void inscribir( Usuario usuario );
 	
 	public String obtenerInformacion() {

@@ -1,6 +1,5 @@
 package ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.builders;
 
-import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.Ingrediente;
 import ar.edu.unlp.info.oo2.ejercicio_13_SubteWay.Sanguche;
 
 public class BuilderSangucheVegano implements BuilderSanguche {
@@ -14,27 +13,30 @@ public class BuilderSangucheVegano implements BuilderSanguche {
 	
 	@Override
 	public void agregarPan() {
-		this.sanguche.agregarIngrediente(new Ingrediente("pan Integral", 100));
+		this.sanguche.setPan("pan integral");
+		this.sanguche.setPrecioPan(100);
 	}
 
 	@Override
 	public void agregarAderezo() {
-		this.sanguche.agregarIngrediente(new Ingrediente("salsa criolla", 20));
+		this.sanguche.setAderezo("salsa criolla");
+		this.sanguche.setPrecioAderezo(20);
 	}
 
 	@Override
 	public void agregarPrincipal() {
-		this.sanguche.agregarIngrediente(new Ingrediente("milanesa de girgolas", 500));
+		this.sanguche.setPrincipal("milanesa de girgolas");
+		this.sanguche.setPrecioPrincipal(500);
 	}
 
 	@Override
 	public void agregarAdicional() {
-		
+		this.sanguche.setAdicional(null);  // o dejar vacío si no hay adicional
+		this.sanguche.setPrecioAdicional(0);
 	}
 
 	@Override
 	public Sanguche build() {
 		return this.sanguche;
 	}
-
 }

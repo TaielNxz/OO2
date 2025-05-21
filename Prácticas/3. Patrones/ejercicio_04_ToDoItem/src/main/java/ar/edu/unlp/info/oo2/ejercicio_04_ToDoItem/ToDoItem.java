@@ -16,57 +16,12 @@ public class ToDoItem {
 	private LocalDateTime startDate;
 	private LocalDateTime endDate;
 	
-	/**
-	* Instancia un ToDoItem nuevo en estado pending con <name> como nombre.
-	*/
 	public ToDoItem(String name) {
 		this.name = name;
 		this.comments = new ArrayList<String>();
 		this.state = new Pending(this);
 	}
 	
-	/**
-	* Getters y Setters
-	*/
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public State getState() {
-		return state;
-	}
-
-	public void setState(State state) {
-		this.state = state;
-	}
-
-	public List<String> getComments() {
-		return comments;
-	}
-
-	public void setComments(List<String> comments) {
-		this.comments = comments;
-	}
-
-	public LocalDateTime getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(LocalDateTime startDate) {
-		this.startDate = startDate;
-	}
-
-	public LocalDateTime getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(LocalDateTime endDate) {
-		this.endDate = endDate;
-	}
 
 	/**
 	* Pasa el ToDoItem a in-progress (siempre y cuando su estado actual sea
@@ -113,6 +68,50 @@ public class ToDoItem {
 	*/
 	public void addComment(String comment) {
 		this.state.addComment(comment);  	
+	}
+	
+	
+	/**
+	* Getters y Setters
+	*/
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public State getState() {
+		return state;
+	}
+
+	public void setState(State state) {
+		this.state = state;
+	}
+
+	public List<String> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<String> comments) {
+		this.comments = comments;
+	}
+
+	public LocalDateTime getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(LocalDateTime startDate) {
+		this.startDate = startDate;
+	}
+
+	public LocalDateTime getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(LocalDateTime endDate) {
+		this.endDate = endDate;
 	}
 	
 }

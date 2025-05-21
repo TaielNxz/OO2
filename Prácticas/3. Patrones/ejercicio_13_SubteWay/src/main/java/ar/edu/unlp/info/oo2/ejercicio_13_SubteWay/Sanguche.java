@@ -5,24 +5,52 @@ import java.util.ArrayList;
 
 public class Sanguche {
 
-	private List<Ingrediente> ingredientes;
+	private String pan;
+	private String aderezo;
+	private String principal;
+	private String adicional;
+	private double precioPan;
+	private double precioAderezo;
+	private double precioPrincipal;
+	private double precioAdicional;
 
-	public Sanguche() {
-		this.ingredientes = new ArrayList<Ingrediente>();
-	}
-
-	public List<Ingrediente> getPartes() {
-		return ingredientes;
+	public double calcularPrecio() {
+		return this.precioPan + this.precioAderezo + this.precioPrincipal + this.precioAdicional;
 	}
 	
-	public double getPrecio() {
-		return this.getPartes().stream()
-				.mapToDouble(parte -> parte.getPrecio())
-				.sum();
+	/*
+	 * Setters
+	*/
+	public void setPan(String pan) {
+		this.pan = pan;
 	}
 	
-	public void agregarIngrediente( Ingrediente ingrediente ) {
-		this.ingredientes.add( ingrediente );
+	public void setAderezo(String adereso) {
+		this.aderezo = adereso;
+	}
+	
+	public void setPrincipal(String principal) {
+		this.principal = principal;
+	}
+	
+	public void setAdicional(String adicional) {
+		this.adicional = adicional;
+	}
+	
+	public void setPrecioPan(double precioPan) {
+		this.precioPan = precioPan;
+	}
+	
+	public void setPrecioAderezo(double precioAderezo) {
+		this.precioAderezo = precioAderezo;
+	}
+	
+	public void setPrecioPrincipal(double precioPrincipal) {
+		this.precioPrincipal = precioPrincipal;
+	}
+	
+	public void setPrecioAdicional(double precioAdicional) {
+		this.precioAdicional = precioAdicional;
 	}
 	
 }

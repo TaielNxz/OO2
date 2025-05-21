@@ -15,37 +15,6 @@ public class Calculadora {
 		this.valorActual = 0.0;
 	}
 	
-
-	// Getters y Setters
-	 public Estado getState() {
-		return state;
-	}
-
-
-	public void setState(Estado state) {
-		this.state = state;
-	}
-
-
-	public Double getValorAcumulado() {
-		return valorAcumulado;
-	}
-
-
-	public void setValorAcumulado(Double valorAcumulado) {
-		this.valorAcumulado = valorAcumulado;
-	}
-	
-	
-	public Double getValorActual() {
-		return valorActual;
-	}
-
-
-	public void setValorActual(Double valorActual) {
-		this.valorActual = valorActual;
-	}
-	
 	
 	/**
 	 * Devuelve el resultado actual de la operación realizada.
@@ -95,5 +64,38 @@ public class Calculadora {
 	 public void dividido() {
 		 this.state.dividido();
 	 }
+	 
+	 
+	 /*
+	  * Getters y Setters
+	 */
+	 public Estado getState() {
+		return state;
+	}
+
+
+	public void setState(Estado state) {
+		this.state = state;
+	}
+
+
+	public Double getValorAcumulado() {
+		return valorAcumulado;
+	}
+
+
+	public void setValorAcumulado(Double valorAcumulado) {
+		this.valorAcumulado = valorAcumulado;
+	}
+	
+	
+	public Double getValorActual() {
+		return valorActual;
+	}
+
+
+	public void setValorActual(Double valorActual) {
+		this.valorActual = valorActual;
+	}
 
 }
