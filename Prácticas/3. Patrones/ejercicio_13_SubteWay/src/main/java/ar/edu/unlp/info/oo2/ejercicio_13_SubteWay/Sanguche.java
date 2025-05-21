@@ -17,38 +17,70 @@ public class Sanguche {
 	public double calcularPrecio() {
 		return this.precioPan + this.precioAderezo + this.precioPrincipal + this.precioAdicional;
 	}
-	
+
 	/*
-	 * Setters
+	 * Getters y Setters
 	*/
+	public String getPan() {
+		return pan;
+	}
+
 	public void setPan(String pan) {
 		this.pan = pan;
 	}
-	
-	public void setAderezo(String adereso) {
-		this.aderezo = adereso;
+
+	public String getAderezo() {
+		return aderezo;
 	}
-	
+
+	public void setAderezo(String aderezo) {
+		this.aderezo = aderezo;
+	}
+
+	public String getPrincipal() {
+		return principal;
+	}
+
 	public void setPrincipal(String principal) {
 		this.principal = principal;
 	}
-	
+
+	public String getAdicional() {
+		return adicional;
+	}
+
 	public void setAdicional(String adicional) {
 		this.adicional = adicional;
 	}
-	
+
+	public double getPrecioPan() {
+		return precioPan;
+	}
+
 	public void setPrecioPan(double precioPan) {
 		this.precioPan = precioPan;
 	}
-	
+
+	public double getPrecioAderezo() {
+		return precioAderezo;
+	}
+
 	public void setPrecioAderezo(double precioAderezo) {
 		this.precioAderezo = precioAderezo;
 	}
-	
+
+	public double getPrecioPrincipal() {
+		return precioPrincipal;
+	}
+
 	public void setPrecioPrincipal(double precioPrincipal) {
 		this.precioPrincipal = precioPrincipal;
 	}
-	
+
+	public double getPrecioAdicional() {
+		return precioAdicional;
+	}
+
 	public void setPrecioAdicional(double precioAdicional) {
 		this.precioAdicional = precioAdicional;
 	}

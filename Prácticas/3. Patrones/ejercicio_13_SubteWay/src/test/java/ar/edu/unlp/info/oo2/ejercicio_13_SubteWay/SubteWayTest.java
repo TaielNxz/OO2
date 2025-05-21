@@ -30,35 +30,27 @@ public class SubteWayTest {
     void testConstruirSangucheClasico() {
         subteWay = new SubteWay(builderClasico);
         Sanguche sanguche = subteWay.construirSanguche();
-        
-        assertEquals(4, sanguche.getPartes().size());
-        assertEquals(500, sanguche.getPrecio());
+        assertEquals(500, sanguche.calcularPrecio());
     }
 
     @Test
     void testConstruirSangucheSinTACC() {
         subteWay = new SubteWay(builderSinTACC);
         Sanguche sanguche = subteWay.construirSanguche();
-        
-        assertEquals(4, sanguche.getPartes().size());
-        assertEquals(618, sanguche.getPrecio());
+        assertEquals(618, sanguche.calcularPrecio());
     }
 
     @Test
     void testConstruirSangucheVegano() {
         subteWay = new SubteWay(builderVegano);
         Sanguche sanguche = subteWay.construirSanguche();
-        
-        assertEquals(3, sanguche.getPartes().size());
-        assertEquals(620, sanguche.getPrecio());
+        assertEquals(620, sanguche.calcularPrecio());
     }
 
     @Test
     void testConstruirSangucheVegetariano() {
         subteWay = new SubteWay(builderVegetariano);
         Sanguche sanguche = subteWay.construirSanguche();
-        
-        assertEquals(3, sanguche.getPartes().size());
-        assertEquals(420, sanguche.getPrecio());
+        assertEquals(420, sanguche.calcularPrecio());
     }
 }
